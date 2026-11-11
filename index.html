@@ -3,38 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelos 3D personalizados</title>
+    <title>Modelos 3D | Three.js</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            min-height: 100vh;
             font-family: Arial, sans-serif;
-            background: #20232a;
-            color: white;
+            color: #f1f5f9;
+            background:
+                radial-gradient(circle at top, #1d3155 0%, #101827 45%, #080d18 100%);
+            padding: 50px 7%;
+        }
+
+        header {
             text-align: center;
-            padding: 40px;
+            margin-bottom: 55px;
         }
-        a {
+
+        .etiqueta {
+            display: inline-block;
+            color: #8bb8ff;
+            border: 1px solid #345b91;
+            background: rgba(57, 120, 232, .12);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-size: clamp(32px, 5vw, 54px);
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        h1 span {
+            color: #6da5ff;
+        }
+
+        header p {
+            color: #aab7ca;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .modelos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .tarjeta {
+            background: rgba(25, 37, 57, .85);
+            border: 1px solid rgba(148, 170, 205, .15);
+            border-radius: 20px;
+            padding: 28px 23px;
+            transition: .3s ease;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-7px);
+            border-color: #5794f5;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+        }
+
+        .numero {
+            color: #7eabf3;
+            font-size: 13px;
+            margin-bottom: 22px;
+            letter-spacing: 2px;
+        }
+
+        .tarjeta h2 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .tarjeta p {
+            color: #aab7ca;
+            font-size: 13px;
+            line-height: 1.6;
+            min-height: 42px;
+            margin-bottom: 24px;
+        }
+
+        .boton {
             display: block;
-            margin: 15px auto;
-            padding: 15px;
-            max-width: 300px;
-            background: #1769aa;
-            color: white;
+            text-align: center;
             text-decoration: none;
+            color: white;
+            background: #3978e8;
+            padding: 12px;
             border-radius: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: .2s;
         }
-        a:hover {
-            background: #0d4f85;
+
+        .boton:hover {
+            background: #5794f5;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 65px;
+            color: #718096;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 35px 6%;
+            }
+
+            header {
+                margin-bottom: 35px;
+            }
         }
     </style>
 </head>
-<body>
-    <h1>Modelos 3D personalizados</h1>
-    <p>Práctica 3.3 - Graficación</p>
 
-    <a href="examples/webgl_loader_fbx_capoeira.html">Capoeira</a>
-    <a href="examples/webgl_loader_fbx_jumping_down.html">Jumping Down</a>
-    <a href="examples/webgl_loader_fbx_praying.html">Praying</a>
-    <a href="examples/webgl_loader_fbx_sitting_laughing.html">Sitting Laughing</a>
-    <a href="examples/webgl_loader_fbx_taunt.html">Taunt</a>
+<body>
+
+    <header>
+        <div class="etiqueta">PROYECTO DE GRAFICACIÓN</div>
+        <h1>Explora los <span>Modelos 3D</span></h1>
+        <p>
+            Visualización y animación de modelos tridimensionales
+            desarrollados con Three.js y modelos FBX.
+            <br>Selecciona un modelo para comenzar la experiencia.
+        </p>
+    </header>
+
+    <main class="modelos">
+
+        <article class="tarjeta">
+            <div class="numero">MODELO 01</div>
+            <h2>Capoeira</h2>
+            <p>Modelo tridimensional con animación de capoeira.</p>
+            <a class="boton" href="examples/webgl_loader_fbx_capoeira.html">
+                Explorar modelo →
+            </a>
+        </article>
+
+        <article class="tarjeta">
+            <div class="numero">MODELO 02</div>
+            <h2>Jumping Down</h2>
+            <p>Visualización de un personaje con animación de salto.</p>
+            <a class="boton" href="examples/webgl_loader_fbx_jumping_down.html">
+                Explorar modelo →
+            </a>
+        </article>
+
+        <article class="tarjeta">
+            <div class="numero">MODELO 03</div>
+            <h2>Praying</h2>
+            <p>Modelo con animación de postura de oración.</p>
+            <a class="boton" href="examples/webgl_loader_fbx_praying.html">
+                Explorar modelo →
+            </a>
+        </article>
+
+        <article class="tarjeta">
+            <div class="numero">MODELO 04</div>
+            <h2>Sitting Laughing</h2>
+            <p>Personaje tridimensional con animación sentado.</p>
+            <a class="boton" href="examples/webgl_loader_fbx_sitting_laughing.html">
+                Explorar modelo →
+            </a>
+        </article>
+
+        <article class="tarjeta">
+            <div class="numero">MODELO 05</div>
+            <h2>Taunt</h2>
+            <p>Modelo con animación de provocación.</p>
+            <a class="boton" href="examples/webgl_loader_fbx_taunt.html">
+                Explorar modelo →
+            </a>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>Proyecto académico | Three.js · WebGL · FBX</p>
+        <p>Modelos y animaciones obtenidos de Mixamo</p>
+    </footer>
+
 </body>
 </html>
