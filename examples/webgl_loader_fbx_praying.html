@@ -9,9 +9,75 @@
 		<meta property="og:url" content="https://threejs.org/examples/webgl_loader_fbx.html">
 		<meta property="og:image" content="https://threejs.org/examples/screenshots/webgl_loader_fbx.jpg">
 		<link type="text/css" rel="stylesheet" href="main.css">
-	</head>
+	
+<style>
+#menu-modelos {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: calc(100% - 24px);
+    max-width: 900px;
+    padding: 12px;
+    box-sizing: border-box;
+    background: rgba(20, 24, 38, 0.88);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    font-family: Arial, sans-serif;
+}
+#menu-modelos a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 13px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+#menu-modelos a:hover {
+    background: rgba(255,255,255,0.13);
+    color: white;
+}
+#menu-modelos a.activo {
+    background: #3978e8;
+    color: white;
+}
+#info {
+    top: 90px !important;
+    left: 15px !important;
+}
+@media (max-width: 600px) {
+    #menu-modelos {
+        gap: 4px;
+        padding: 8px;
+    }
+    #menu-modelos a {
+        font-size: 10px;
+        padding: 8px;
+    }
+}
+</style>
+
+</head>
 
 	<body>
+<nav id="menu-modelos">
+<a href="../index.html">⌂ Inicio</a>
+<a href="webgl_loader_fbx_capoeira.html">Capoeira</a>
+<a href="webgl_loader_fbx_jumping_down.html">Jumping Down</a>
+<a href="webgl_loader_fbx_praying.html" class="activo">Praying</a>
+<a href="webgl_loader_fbx_sitting_laughing.html">Sitting Laughing</a>
+<a href="webgl_loader_fbx_taunt.html">Taunt</a>
+</nav>
+
 		<div id="info">
 			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - FBXLoader<br />
 			Character and animation from <a href="https://www.mixamo.com/" target="_blank" rel="noopener">Mixamo</a>
